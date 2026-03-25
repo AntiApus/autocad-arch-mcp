@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "autocad-arch-mcp"
+version = "1.0.0"
+description = "Servidor MCP arquitectónico para AutoCAD — dibuja plantas, cortes y fachadas con Claude"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.8"
+dependencies = [
+    "mcp>=1.0.0",
+    "pywin32>=306",
+]
+
+[project.scripts]
+autocad-arch-mcp = "autocad_arch_mcp.server:main"
+
+[project.urls]
+Repository = "https://github.com/TU_USUARIO/autocad-arch-mcp"
+
+[tool.hatch.build.targets.wheel]
+packages = ["autocad_arch_mcp"]
